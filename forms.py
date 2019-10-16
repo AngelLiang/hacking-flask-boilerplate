@@ -6,6 +6,7 @@ from wtforms.validators import DataRequired, EqualTo, Length
 
 
 class RegisterForm(Form):
+    """注册表单"""
     name = TextField(
         'Username', validators=[DataRequired(), Length(min=6, max=25)]
     )
@@ -23,11 +24,13 @@ class RegisterForm(Form):
 
 
 class LoginForm(Form):
+    """登录表单"""
     name = TextField('Username', [DataRequired()])
     password = PasswordField('Password', [DataRequired()])
 
 
 class ForgotForm(Form):
+    """忘记密码表单"""
     email = TextField(
         'Email', validators=[DataRequired(), Length(min=6, max=40)]
     )

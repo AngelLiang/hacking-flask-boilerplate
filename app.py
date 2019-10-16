@@ -53,18 +53,21 @@ def about():
 
 @app.route('/login')
 def login():
+    """登录"""
     form = LoginForm(request.form)
     return render_template('forms/login.html', form=form)
 
 
 @app.route('/register')
 def register():
+    """注册"""
     form = RegisterForm(request.form)
     return render_template('forms/register.html', form=form)
 
 
 @app.route('/forgot')
 def forgot():
+    """忘记密码"""
     form = ForgotForm(request.form)
     return render_template('forms/forgot.html', form=form)
 
